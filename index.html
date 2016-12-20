@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Christmas e-Card</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+
+	<!-- SCC style for card -->	
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Add a stylesheet link to request the desired web font -->
+	<link href='http://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
+	<!--link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps'	rel='stylesheet' type='text/css'-->
+
+	<!-- JavaScript libraries -->
+	<script type="text/javascript" src="js/paper-min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	<script type='text/javascript' src='js/jquery.fullscreen.min.js'></script>
+	<script type="text/javascript" src="js/eCard.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+</script>
+
+</head>
+<body>
+	<div id="greeting_card" style="display:block;overflow:hidden">
+		<canvas id="canvas" resize></canvas>
+		<div id="greeting_text"><h1>Dear friends!<h2>Merry Christmas<br>and Happy New Year!<br><br>With love,<br>ak</div>
+		<div id="social_icons" >
+			<span class="icon"><a href='#' target='_blank'>
+				<img src="icon/facebook_32.png" border="0" alt="facebook"/></a></span>
+			<span class="icon"><a href='#' target='_blank'>
+				<img src="icon/twitter_32.png" border="0" alt="twitter"/></a></span>
+			<span class="icon"><a href='#' target='_blank'>
+				<img src="icon/google_plus_32.png" border="0" alt="google_plus"/></a></span>
+			<span class="icon"><a href='#' target='_blank'>
+				<img src="icon/youtube_32.png" border="0" alt="youtube"/></a></span>
+		</div>
+		
+		<audio id="audio">
+			<source src="sound/jingle-bells-slow-mix.mp3" type="audio/mpeg">
+			<source src="sound/jingle-bells-slow-mix.ogg" type="audio/ogg">		
+		</audio>
+		
+		<div id='bt'>
+			<div id='bt_fullscreen'></div>
+			<div id='bt_sound'></div>
+		</div>
+	</div>
+
+	<script type='text/javascript'>
+		jQuery(function($){
+			var config = {
+				fullscreenButton: true,		// visibility of sound button (true or false)
+				soundButton: true,			// visibility of sound button (true or false)
+				soundAutoPlay: true,		// autoplay (true or false)
+				soundLoop: true,			// sound loop (true or false)
+				soundVolume: 1,			// sound volume (from 0 till 1)
+				treeBottom: 200,			// bottom width tree (number)
+				snow_count: 80,				// number of particles (number)
+				b_rotate: true,				// rotation of a big element (true or false)
+				m_rotate: true,				// rotation of particles (true or false)
+				b_speed_rotate: 3,			// speed of big element rotation (number)
+				m_speed_rotate: 2,			// speed of particles rotation (number)
+				particle_b_type: 1,			// type of a big element (1,2,3,4,5,6 or 7)
+				particle_m_type: 'all',		// type of particles (1,2,3,4,5,6,7 or all)
+				b_color: '#1076e8',			// color of a big element (hex color)
+				m_color: '#1076e8',			// color of particles (hex color)
+				treeColor: 'fullcolor',		// color line of tree ( 'fullcolor', 'none' or any hexcolor (e.g., #1076e8) )
+				b_randomeColor: true,		// changing color of big star (true or false)
+				m_randomeColor: true,		// changing color of particles (true or false)
+				scaleBigStar: 6,			// scale of the big star (number)
+				scaleStar: 1.8,				// scale of particles (number)
+				messageShow: 1000,			// delay time for showing a greeting text (in millisecond)
+				treeShow: 4500				// delay time for showing a christmas tree (in millisecond)
+			};
+			$('#canvas').eCard(config);
+		});
+	</script>
+
+</body>
+</html>
